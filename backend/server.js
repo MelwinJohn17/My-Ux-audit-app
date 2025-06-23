@@ -5,6 +5,7 @@
 // npm install express node-fetch puppeteer cors
 // You will also need to get a Gemini API key from Google AI Studio.
 
+import 'dotenv/config';
 import express from 'express';
 import fetch from 'node-fetch';
 import puppeteer from 'puppeteer';
@@ -13,7 +14,7 @@ import cors from 'cors';
 // --- Configuration ---
 const app = express();
 const PORT = process.env.PORT || 3000;
-const API_KEY = process.env.GEMINI_API_KEY || ""; // IMPORTANT: Set this as an environment variable for security
+const API_KEY = process.env.GEMINI_API_KEY || "AIzaSyCCihPpVt4sUhhrJMzTqRhWfltznjQ-TLw"; // IMPORTANT: Set this as an environment variable for security
 
 // --- Middleware ---
 app.use(cors()); // Allows your frontend to call this backend
