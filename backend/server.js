@@ -26,7 +26,16 @@ app.use(express.json()); // Allows the server to understand JSON in request bodi
  */
 async function getWebsiteContent(url) {
     console.log(`Launching browser to fetch content for: ${url}`);
-    const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
+    const browser = await puppeteer.launch({ 
+    headless: true,
+    args: [
+        '--no-sandbox', 
+        '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage',
+        '--disable-gpu'
+    ],
+    executablePath: process.env.CHROME_PATH || undefined
+});
     const page = await browser.newPage();
     try {
         await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
