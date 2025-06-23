@@ -1,0 +1,19 @@
+{
+  "name": "ux-audit-backend",
+  "version": "1.0.0",
+  "description": "Backend server for the AI UX Audit Dashboard",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Gemini",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "node-fetch": "^3.3.2",
+    "puppeteer": "^22.10.0"
+  }
+}
+
